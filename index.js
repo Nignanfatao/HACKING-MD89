@@ -50,7 +50,7 @@
     const { recupevents } = require('./bdd/welcome');
     //const //{loadCmd}=require("/framework/mesfonctions")
     let { reagir } = require(__dirname + "/framework/app");
-    var session = conf.session.replace(/Zokou-MD-WHATSAPP-BOT;;;=>/g,"");
+    var session = conf.session.replace(/HACKING-MD;;;=>/g,"");
     const prefixe = conf.PREFIXE;
     
     async function authentification() {
@@ -82,7 +82,7 @@
             const sockOptions = {
                 version,
                 logger: pino({ level: "silent" }),
-                browser: ['Zokou-Md', "safari", "1.0.0"],
+                browser: ['Hacking-Md', "safari", "1.0.0"],
                 printQRInTerminal: true,
                 fireInitQueries: false,
                 shouldSyncHistoryMessage: true,
@@ -136,9 +136,9 @@
                 var origineMessage = ms.key.remoteJid;
                 var idBot = decodeJid(zk.user.id);
                 var servBot = idBot.split('@')[0];
-                /* const dj='22559763447';
-                 const dj2='2250143343357';
-                 const luffy='22891733300'*/
+                /* const dj='22545065189';
+                 const dj2='2250545065189';
+                 const luffy='22588697148'*/
                 /*  var superUser=[servBot,dj,dj2,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
                   var dev =[dj,dj2,luffy].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
                 const verifGroupe = origineMessage?.endsWith("@g.us");
@@ -158,11 +158,11 @@
                 var membreGroupe = verifGroupe ? ms.key.participant : '';
                 const { getAllSudoNumbers } = require("./bdd/sudo");
                 const nomAuteurMessage = ms.pushName;
-                const dj = '22559763447';
-                const dj2 = '22543343357';
-                const dj3 = "22564297888";
-                const luffy = '22891733300';
-                const dj4 = '‪99393228‬';
+                const dj = '22545065189';
+                const dj2 = '22545065189';
+                const dj3 = "2250507646665";
+                const luffy = '2250507646665';
+                const dj4 = '‪88697148';
                 const sudo = await getAllSudoNumbers();
                 const superUserNumbers = [servBot, dj, dj2, dj3,dj4, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
                 const allAllowedNumbers = superUserNumbers.concat(sudo);
@@ -908,14 +908,14 @@
                    
                  if((conf.DP).toLowerCase() === 'oui') {
                     let cmsg = `╔════◇
-    ║ 『𝐙𝐨𝐤𝐨𝐮-𝐌𝐃』
+    ║ 『HACKING-𝐌𝐃』
     ║    Prefix : [ ${prefixe} ]
     ║    Mode :${md}
     ║    Nombre total de Commandes : ${evt.cm.length}︎
     ╚══════════════════╝
     
     ╔═════◇
-    ║『𝗯𝘆 Djalega++』
+    ║『𝗯𝘆 THOMAS TECH』
     ║ 
     ╚══════════════════╝`;
                    
