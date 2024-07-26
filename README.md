@@ -47,7 +47,7 @@
 ## DEPLOYMENT 
 - **déploiement sur heroku**
   1. si vous ne disposez pas de compte **heroku** cliquez [**ici create**](https://id.heroku.com/login) pour vous en procurer un .
-  2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING--MD9) pour deployer le bot sur **heroku**
+  2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING-MD89) pour deployer le bot sur **heroku**
 
 - **Déploiement sur Koyeb**
   1. si vous n'avez pas de compte **koyeb** cliquez [**ici**](https://dashboard.koyeb.com/signup) pour vous en procurer un .
