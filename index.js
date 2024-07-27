@@ -645,7 +645,30 @@
             
                         if (!superUser && origineMessage === auteurMessage && conf.PM_PERMIT === "oui" ) {
                           /*  repondre("Vous avez pas acces aux commandes en privé") ;*/ return }
-                        ///////////////////////////////
+
+             else {
+  if (conf.CHATBOT === "oui") {
+    if (_0x2af945) {
+      const _0x1d091a = require("./framework/traduction");
+      let _0x32441d = await _0x1d091a(_0x4865d2, {
+        'to': 'fr'
+      });
+
+      fetch("http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=" + _0x32441d)
+        .then(_0x4f10d6 => _0x4f10d6.json())
+        .then(_0x44768c => {
+          const _0x534713 = _0x44768c.cnt;
+          _0x267520(_0x534713);
+        })
+        .catch(_0x58d0b4 => {
+          console.error("Erreur lors de la requête à BrainShop :", _0x58d0b4);
+        });
+    }
+  }
+}
+                        
+  ///////////////////////////////
+                    
             
                         
                          
