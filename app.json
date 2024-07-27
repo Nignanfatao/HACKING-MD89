@@ -47,6 +47,14 @@
       "required":false
     }
     ,
+"PM_CHATBOT" :
+     {
+      "description":"Le bot  répondra  automatiquement les messages en priver ou même  les groupes lorsqu'il est activé  et même les autres utilisateurs causeront avec lui (oui pour activer et non pour désactiver)",
+      "value":"non",
+      "required":false
+    }
+    ,
+	  
     "MODE_PUBLIC":
     {
       "description":"oui pour le mode public ou non pour le mode privé(Dans ce vous seul  utiliserez le bot)",
