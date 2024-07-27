@@ -39,17 +39,18 @@
       "required":false
        
      },
-
-     "PM_PERMIT" :
+"PM_CHATBOT" :
      {
-      "description":"Les commandes seront pas fonctionnelles en priver pour les autres utilisateurs (oui pour activer et non pour désactiver)",
+      "description":"Le bot  répondra  automatiquement les messages en priver ou même  les groupes lorsqu'il est activé  et même les autres utilisateurs causeront avec lui (oui pour activer et non pour désactiver)",
       "value":"non",
       "required":false
     }
     ,
-"PM_CHATBOT" :
+
+	  
+     "PM_PERMIT" :
      {
-      "description":"Le bot  répondra  automatiquement les messages en priver ou même  les groupes lorsqu'il est activé  et même les autres utilisateurs causeront avec lui (oui pour activer et non pour désactiver)",
+      "description":"Les commandes seront pas fonctionnelles en priver pour les autres utilisateurs (oui pour activer et non pour désactiver)",
       "value":"non",
       "required":false
     }
