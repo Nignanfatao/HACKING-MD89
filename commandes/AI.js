@@ -138,7 +138,7 @@ zokou({ nomCom: "calcul", reaction: "😂", categorie: "IA" }, async (dest, zk, 
 
 if (!arg || arg.length === 0) { return repondre(`Please insert maths calculations like 1000*2.`); }
 // Regrouper les arguments en une seule chaîne séparée par "-" const cal = arg.join(' ');
-const response = await fetch(`https://api.maher-zubair.tech/ai/mathssolve?q=${cal}`);
+const response = await fetch(`https://api.maher-zubair.tech/ai/mathssolve?q=${calculation}`);
 const data = await response.json();
 await repondre(data.result);console.log(data.completion); 
 
