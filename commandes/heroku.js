@@ -159,7 +159,7 @@ zokou({
   let choixIndex = reponse.message.extendedTextMessage.text - 1;
   let { nom, choix } = variables[choixIndex];
 
-  let messageChoix = "    ╭──────༺♡༻──────╮\n              Zokou-settings\n    ╰──────༺♡༻──────╯\n\n";
+  let messageChoix = "    ╭──────༺♡༻──────╮\n              Thomas tech-settings\n    ╰──────༺♡༻──────╯\n\n";
   messageChoix += `*Nom* : ${nom}\n`;
   messageChoix += `*Description* : ${getDescriptionFromEnv(nom)}\n\n`;
   messageChoix += "┌────── ⋆⋅☆⋅⋆ ──────┐\n\n";
