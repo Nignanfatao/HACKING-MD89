@@ -645,6 +645,41 @@
             
                         if (!superUser && origineMessage === auteurMessage && conf.PM_PERMIT === "oui" ) {
                           /*  repondre("Vous avez pas acces aux commandes en privé") ;*/ return }
+
+
+                            else if (conf.PM_CHATBOT === "oui") {
+  if (!isCommandValid(arg)) {
+    try {
+      const { traduire } = require('./framework/traduction');
+      const message = await traduire(arg.join(' '), { to: 'en' });
+      console.log(message);
+
+      fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=${message}`)
+        .then(response => response.json())
+        .then(data => {
+          const botResponse = data.cnt;
+          console.log(botResponse);
+
+          traduire(botResponse, { to: 'fr' })
+            .then(translatedResponse => {
+              repondre(translatedResponse);
+            })
+            .catch(error => {
+              console.error('Erreur lors de la traduction en français :', error);
+              repondre('Erreur lors de la traduction en français');
+            });
+        })
+        .catch(error => {
+          console.error('Erreur lors de la requête à BrainShop :', error);
+          repondre('Erreur lors de la requête à BrainShop');
+        });
+    } catch (e) {
+      repondre("Oups, une erreur est survenue : " + e);
+    }
+  }
+}
+
+
                         
                                       ///////////////////////////////
                     
