@@ -184,3 +184,37 @@ zokou({nomCom:'time',reaction:'⌚',categorie:"General"}, async (dest, zk, comma
     repondre("That country name is incorrect!");
   }
 });
+
+/*zokou({ nomCom: "gpt4", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  const { repondre, arg } = commandeOptions;
+
+  try {
+    if (!arg || arg.length === 0) {
+      return repondre("Veuillez poser une question.");
+    } else {
+      const question = arg.join(" ");
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${s.GPT4}`, // Remplacez s.GPT4 par votre clé d'API OpenAI pour GPT-4
+        },
+        body: JSON.stringify({
+          model: "gpt-4",
+          messages: [{ role: "system", content: "You" }, { role: "user", content: question }],
+        }),
+      });
+
+      const data = await response.json();
+      console.log("GPT-4 RESPONSE: ", data);
+      if (!data.choices || data.choices.length === 0) {
+        repondre("Votre API est invalide, veuillez insérer une nouvelle.");
+      } else {
+        return repondre(data.choices[0].message.content);
+      }
+    }
+  } catch (error) {
+    console.error("Erreur:", error.message || "Une erreur s'est produite");
+    repondre("Oups, une erreur est survenue lors du traitement de votre demande.");
+  }
+});/*
