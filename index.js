@@ -50,7 +50,6 @@
     const { recupevents } = require('./bdd/welcome');
     //const //{loadCmd}=require("/framework/mesfonctions")
     let { reagir } = require(__dirname + "/framework/app");
-     const traduire = require("../framework/traduction") ;
     var session = conf.session.replace(/HACKING-MD;;;=>/g,"");
     const prefixe = conf.PREFIXE;
     
@@ -429,45 +428,27 @@
                     }
 
             
+else {
+  if (conf.PM_CHATBOT === "oui") {
+    if (_0x2af945) {
+      const _0x1d091a = require("./framework/traduction");
+      let _0x32441d = await _0x1d091a(_0x4865d2, {
+        'to': 'en'
+      });
 
-        else {
-    try {
-      const { traduire } = require('./framework/traduction');
-      traduire(arg.join(' '), { to: 'en' })
-        .then(message => {
-          console.log(message);
-
-          fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=${message}`)
-            .then(response => response.json())
-            .then(data => {
-              const botResponse = data.cnt;
-              console.log(botResponse);
-
-              traduire(botResponse, { to: 'fr' })
-                .then(translatedResponse => {
-                  repondre(translatedResponse);
-                })
-                .catch(error => {
-                  console.error('Erreur lors de la traduction en français :', error);
-                  repondre('Erreur lors de la traduction en français');
-                });
-            })
-            .catch(error => {
-              console.error('Erreur lors de la requête à BrainShop :', error);
-              repondre('Erreur lors de la requête à BrainShop');
-            });
+      fetch("http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=" + _0x32441d)
+        .then(_0x4f10d6 => _0x4f10d6.json())
+        .then(_0x44768c => {
+          const _0x534713 = _0x44768c.cnt;
+          _0x267520(_0x534713);
         })
-        .catch(error => {
-          repondre("Oups, une erreur est survenue : " + error);
+        .catch(_0x58d0b4 => {
+          console.error("Erreur lors de la requête à BrainShop :", _0x58d0b4);
         });
-    } catch (e) {
-      repondre("Oups, une erreur est survenue : " + e);
     }
   }
-} else {
-  repondre("Le chatbot n'est pas activé.");
 }
-
+        
                 
     
                     
