@@ -426,50 +426,7 @@
             console.error(e);
         }
                     }
-
-
-else {
-    try {
-      const { traduire } = require('./framework/traduction');
-      traduire(arg.join(' '), { to: 'en' })
-        .then(message => {
-          console.log(message);
-
-          fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=${message}`)
-            .then(response => response.json())
-            .then(data => {
-              const botResponse = data.cnt;
-              console.log(botResponse);
-
-              traduire(botResponse, { to: 'fr' })
-                .then(translatedResponse => {
-                  repondre(translatedResponse);
-                })
-                .catch(error => {
-                  console.error('Erreur lors de la traduction en français :', error);
-                  repondre('Erreur lors de la traduction en français');
-                });
-            })
-            .catch(error => {
-              console.error('Erreur lors de la requête à BrainShop :', error);
-              repondre('Erreur lors de la requête à BrainShop');
-            });
-        })
-        .catch(error => {
-          repondre("Oups, une erreur est survenue : " + error);
-        });
-    } catch (e) {
-      repondre("Oups, une erreur est survenue : " + e);
-    }
-  }
-} else {
-  repondre("Le chatbot n'est pas activé.");
-}
-                
-
-
-
-                
+     
 
             
          //anti-lien
@@ -691,11 +648,11 @@ else {
                         
                         /******************* PM_CHATBOT***************/
 
-               if (conf.PM_CHATBOT === "oui") {
-  if (isCommandValid(arg)) {
-    // code à exécuter si la condition est vérifiée
-  }
-}
+                         if (conf.PM_CHATBOT === "oui") {
+                 if (isCommandValid(arg)) {
+            /* code à exécuter si la condition est vérifiée */
+         }
+       }
  ///////////////////////////////////////
                     
             
@@ -738,7 +695,45 @@ else {
                     
                     }} ;
                 //fin exécution commandes
-                  
+
+                    try {
+      const { traduire } = require('./framework/traduction');
+      traduire(arg.join(' '), { to: 'en' })
+        .then(message => {
+          console.log(message);
+
+          fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=${message}`)
+            .then(response => response.json())
+            .then(data => {
+              const botResponse = data.cnt;
+              console.log(botResponse);
+
+              traduire(botResponse, { to: 'fr' })
+                .then(translatedResponse => {
+                  repondre(translatedResponse);
+                })
+                .catch(error => {
+                  console.error('Erreur lors de la traduction en français :', error);
+                  repondre('Erreur lors de la traduction en français');
+                });
+            })
+            .catch(error => {
+              console.error('Erreur lors de la requête à BrainShop :', error);
+              repondre('Erreur lors de la requête à BrainShop');
+            });
+        })
+        .catch(error => {
+          repondre("Oups, une erreur est survenue : " + error);
+        });
+    } catch (e) {
+      repondre("Oups, une erreur est survenue : " + e);
+    }
+  }
+} else {
+  repondre("Le chatbot n'est pas activé.");
+}
+
+                
                  
                 });
             //fin événement message
