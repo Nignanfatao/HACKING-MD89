@@ -134,15 +134,6 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
   
   });  
 
-zokou({ nomCom: "calcul", reaction: "😂", categorie: "IA" }, async (dest, zk, commandeOptions) => { const { repondre, arg, ms } = commandeOptions;
-
-if (!arg || arg.length === 0) { return repondre(`Please insert maths calculations like 1000*2.`); }
-// Regrouper les arguments en une seule chaîne séparée par "-" const cal = arg.join(' ');
-const response = await fetch(`https://api.maher-zubair.tech/ai/mathssolve?q=${calculation}`);
-const data = await response.json();
-await repondre(data.result);console.log(data.completion); 
-
-});
 
 /*zokou({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg } = commandeOptions;
