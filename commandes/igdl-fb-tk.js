@@ -3,7 +3,7 @@ const fs = require('fs');
 const getFBInfo = require("@xaviabot/fb-downloader");
 const { default: axios } = require('axios');
 
-zokou({nomCom : "igdl" , categorie : "téléchargement"},async (dest , zk , commandeOptions)=>{
+zokou({nomCom : "instagram" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
   const {ms,repondre,arg} = commandeOptions ;
 
   let link = arg.join(' ')
@@ -15,10 +15,54 @@ zokou({nomCom : "igdl" , categorie : "téléchargement"},async (dest , zk , comm
     let igvid = await axios('https://vihangayt.me/download/instagram?url='+link)
 
     if (igvid.data.data.data[0].type == 'video') {
-    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "ig video downloader powered by *Hacking-Md*",gifPlayback : false },{quoted : ms}) 
+    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "ig video downloader powered by *Bmw-Md*",gifPlayback : false },{quoted : ms}) 
     }
     else {
-        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "ig image downloader powered by *Hacking-Md*"})
+        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "ig image downloader powered by *Bmw-Md*"})
+    }
+  
+  } catch (e) {repondre("erreur survenue lors du téléchargement \n " + e)}
+  
+});
+
+zokou({nomCom : "twitter" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
+  const {ms,repondre,arg} = commandeOptions ;
+
+  let link = arg.join(' ')
+
+  if (!arg[0]) { repondre('Veillez insérer un lien video instagramme');return}; 
+
+  try {
+     
+    let igvid = await axios('https://api.maher-zubair.tech/download/twitter?url='+link)
+
+    if (igvid.data.data.data[0].type == 'video') {
+    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "ig video downloader powered by *Bmw-Md*",gifPlayback : false },{quoted : ms}) 
+    }
+    else {
+        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "ig image downloader powered by *Bmw-Md*"})
+    }
+  
+  } catch (e) {repondre("erreur survenue lors du téléchargement \n " + e)}
+  });
+
+
+  zokou({nomCom : "Spotify" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
+  const {ms,repondre,arg} = commandeOptions ;
+
+  let link = arg.join(' ')
+
+  if (!arg[0]) { repondre('Veillez insérer un lien video instagramme');return}; 
+
+  try {
+     
+    let igvid = await axios('https://api.maher-zubair.tech/download/spotify?url=$'+link)
+
+    if (igvid.data.data.data[0].type == 'video') {
+    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "ig video downloader powered by *Bmw-Md*",gifPlayback : false },{quoted : ms}) 
+    }
+    else {
+        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "ig image downloader powered by *Bmw-Md*"})
     }
   
   } catch (e) {repondre("erreur survenue lors du téléchargement \n " + e)}
@@ -26,9 +70,31 @@ zokou({nomCom : "igdl" , categorie : "téléchargement"},async (dest , zk , comm
 });
 
 
+zokou({nomCom : "socialmedia" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
+  const {ms,repondre,arg} = commandeOptions ;
+
+  let link = arg.join(' ')
+
+  if (!arg[0]) { repondre('Veillez insérer un lien video instagramme');return}; 
+
+  try {
+     
+    let igvid = await axios('https://api.maher-zubair.tech/download/alldownload2?url='+link)
+
+    if (igvid.data.data.data[0].type == 'video') {
+    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "ig video downloader powered by *Bmw-Md*",gifPlayback : false },{quoted : ms}) 
+    }
+    else {
+        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "ig image downloader powered by *Bmw-Md*"})
+    }
+  
+  } catch (e) {repondre("erreur survenue lors du téléchargement \n " + e)}
+  
+});
+
 zokou({
-  nomCom: "fbdl",
-  categorie: "téléchargement",
+  nomCom: "facabook",
+  categorie: "Download",
   reaction: "📽️"
 },
 async (dest, zk, commandeOptions) => {
@@ -49,7 +115,7 @@ async (dest, zk, commandeOptions) => {
         Lien: ${result.url}
       `;
        zk.sendMessage(dest,{image : { url : result.thumbnail}, caption : caption},{quoted : ms}) ;
-       zk.sendMessage(dest, { video: { url: result.hd  }, caption: 'facebook video téléchargement   by *Hacking-MD*' }, { quoted: ms });
+       zk.sendMessage(dest, { video: { url: result.hd  }, caption: 'facebook video downloader powered by *Bmw-MD*' }, { quoted: ms });
       
     })
     .catch((error) => {console.log("Error:", error)
@@ -65,7 +131,7 @@ async (dest, zk, commandeOptions) => {
 
 
 
-zokou({ nomCom: "tiktok", categorie: "téléchargement", reaction: "🎵" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (dest, zk, commandeOptions) => {
   const { arg, ms, prefixe,repondre } = commandeOptions;
   if (!arg[0]) {
     repondre(`how to use this command:\n ${prefixe}tiktok tiktok_video_link`);
@@ -91,8 +157,8 @@ Description: ${tik.desc}
 });
 
 zokou({
-  nomCom: "fbdl2",
-  categorie: "téléchargement",
+  nomCom: "facebook2",
+  categorie: "Download",
   reaction: "📽️"
 },
 async (dest, zk, commandeOptions) => {
@@ -113,7 +179,7 @@ async (dest, zk, commandeOptions) => {
         Lien: ${result.url}
       `;
        zk.sendMessage(dest,{image : { url : result.thumbnail}, caption : caption},{quoted : ms}) ;
-       zk.sendMessage(dest, { video: { url: result.sd  }, caption: 'facebook video downloader powered by *Hacking-MD*' }, { quoted: ms });
+       zk.sendMessage(dest, { video: { url: result.sd  }, caption: 'facebook video downloader powered by *Bmw-MD*' }, { quoted: ms });
       
     })
     .catch((error) => {console.log("Error:", error)
