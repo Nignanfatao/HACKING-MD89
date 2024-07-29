@@ -50,6 +50,7 @@
     const { recupevents } = require('./bdd/welcome');
     //const //{loadCmd}=require("/framework/mesfonctions")
     let { reagir } = require(__dirname + "/framework/app");
+     const traduire = require("../framework/traduction") ;
     var session = conf.session.replace(/HACKING-MD;;;=>/g,"");
     const prefixe = conf.PREFIXE;
     
