@@ -94,27 +94,29 @@ zokou({nomCom:'calcul',reaction:'🔢',categorie:'Thomas'}, async (dest, zk, com
 });
 
 // GPT-4 command
-zokou({nomCom:"gpt4",reaction:'📡',categorie:'IA'}, async (dest, zk, commandeOptions) => {
-  const { repondre, arg, ms } = commandeOptions;
+zokou({ nomCom: "gpt4", reaction: "🤔", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
   
-  try {
-    if (!arg || arg.length === 0) {
-      return repondre("Please ask a question.");
+    try {
+      if (!arg || arg.length === 0) {
+        return repondre(`Please ask a question.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const question = arg.join(' ');
+      const response = await axios.get(`https://gpt4.giftedtech.workers.dev/?prompt=${question}`);
+      
+      const data = response.data;
+      if (data) {
+        repondre(data.result);
+      } else {
+        repondre("Error during response generation.");
+      }
+    } catch (error) {
+      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
+      repondre("Oops, an error occurred while processing your request.");
     }
-    
-    const prompt = arg.join(" ");
-    const response = await axios.get(`https://api.maher-zubair.tech/ai/chatgpt4?q=${prompt}`);
-    
-    if (response.data) {
-      repondre(response.data.data);
-    } else {
-      repondre("Error during response generation.");
-    }
-  } catch (error) {
-    console.error('Error:', error.message || "An error occurred");
-    repondre("Oops, an error occurred while processing your request.");
-  }
-});
+  });
 
 // Best Wallpaper command
 zokou({nomCom:"best-wallp",reaction:'🙌',categorie:"Thomas"}, async (dest, zk, commandeOptions) => {
