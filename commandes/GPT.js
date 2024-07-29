@@ -4,7 +4,7 @@ const s = require('../set');
 const axios = require('axios');
 
 // Alexa command
-zokou({nomCom:"alexa",reaction:"📡",categorie:"IA"}, async (dest, zk, commandeOptions) => {
+zokou({nomCom:"alexa",reaction:"📡",categorie:"Thomas"}, async (dest, zk, commandeOptions) => {
   const {repondre, ms, arg} = commandeOptions;
   
   if (!arg || !arg[0]) {
@@ -64,7 +64,7 @@ zokou({nomCom:"gemini",reaction:'🤗',categorie:'IA'}, async (dest, zk, command
   const { repondre, arg, ms } = commandeOptions;
   
   if (!arg || arg.length === 0) {
-    return repondre("Hello, I'm *HACKING-MD*, an AI developed by France King.\n\nWhat help can I offer you today?");
+    return repondre("Hello, I'm *HACKING-MD*, an AI developed by *THOMAS TECH*.\n\nWhat help can I offer you today?");
   }
   
   try {
@@ -77,7 +77,7 @@ zokou({nomCom:"gemini",reaction:'🤗',categorie:'IA'}, async (dest, zk, command
 });
 
 // Calculator command
-zokou({nomCom:'calcul2',reaction:'🔢',categorie:'General'}, async (dest, zk, commandeOptions) => {
+zokou({nomCom:'calcul',reaction:'🔢',categorie:'Thomas'}, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
   
   if (!arg || arg.length === 0) {
@@ -168,7 +168,7 @@ zokou({nomCom:"nature",reaction:'🦗',categorie:"Thomas"}, async (dest, zk, com
 });
 
 // Time command
-zokou({nomCom:'time',reaction:'⌚',categorie:"General"}, async (dest, zk, commandeOptions) => {
+zokou({nomCom:'time',reaction:'⌚',categorie:"Thomas"}, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
   
   try {
