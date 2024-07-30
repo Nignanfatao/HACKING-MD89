@@ -416,6 +416,46 @@
                 } 
 
 
+if (_0x45f822.endsWith("@s.whatsapp.net") && _0x37a424 != _0x5d8568) {
+      if (_0x55afff?.["etat"] == 'on') {
+        if (_0x55afff.lien == "no url") {
+          _0x540c51(_0x55afff.message);
+        } else {
+          _0x59d506.sendMessage(_0x45f822, {
+            'image': {
+              'url': _0x55afff.lien
+            },
+            'caption': _0x55afff.message
+          }, {
+            'caption': _0x239233
+          });
+        }
+      } else {
+        if (conf.PM_CHATBOT === "oui") {
+          if (!_0x1ce3d7) {
+            const _0x131828 = require("./framework/traduction");
+            let _0x5ac608 = await _0x131828(_0x41edd6, {
+              'to': 'en'
+            });
+            fetch('http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=' + _0x5ac608).then(_0x334dd3 => _0x334dd3.json()).then(_0x37159c => {
+              const _0x27df22 = _0x37159c.cnt;
+              _0x131828(_0x27df22, {
+                'to': 'fr'
+              }).then(_0x9f84f9 => {
+                _0x540c51(_0x9f84f9);
+              })['catch'](_0x3374fc => {
+                console.error("Erreur lors de la traduction en français :", _0x3374fc);
+              });
+            })["catch"](_0x227c33 => {
+              console.error("Erreur lors de la requête à BrainShop :", _0x227c33);
+            });
+          }
+          ;
+        }
+      }
+    }
+                
+
         
             //---------------------------------------rang-count--------------------------------
         if (texte && auteurMessage.endsWith("s.whatsapp.net")) {
