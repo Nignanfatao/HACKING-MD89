@@ -415,7 +415,7 @@
                     
                 } 
 
-//---------------------------------------PM_CHATBOT--------------------------------
+//---------------------------------------CHATBOT--------------------------------
         
            if (destinataire.endsWith("@s.whatsapp.net") && expediteur != botID) {
   if (reponseAutomatique?.etat == 'on') {
