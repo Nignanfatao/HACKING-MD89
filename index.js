@@ -415,8 +415,9 @@
                     
                 } 
 
+//---------------------------------------PM_CHATBOT--------------------------------
+        if (texte && auteurMessage.endsWith("s.whatsapp.net")) {       
 
-if (texte && auteurMessage.endsWith("@s.whatsapp.net") && _0x37a424 != _0x5d8568) {
       if (_0x55afff?.["etat"] == 'on') {
         if (_0x55afff.lien == "no url") {
           _0x540c51(_0x55afff.message);
