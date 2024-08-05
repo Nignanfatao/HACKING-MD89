@@ -364,7 +364,7 @@
           });
         }
       } else {
-        if (conf.PM_CHATBOT === "oui") {
+        if (conf.CHATBOT === "oui") {
           if (!_0x1ce3d7) {
             const _0x131828 = require("./framework/traduction");
             let _0x5ac608 = await _0x131828(_0x41edd6, {
