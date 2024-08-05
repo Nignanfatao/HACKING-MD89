@@ -415,55 +415,7 @@
                     
                 } 
 
-//---------------------------------------CHATBOT--------------------------------
-        
-           if (destinataire.endsWith("@s.whatsapp.net") && expediteur != botID) {
-  if (reponseAutomatique?.etat == 'on') {
-    if (reponseAutomatique.lien == "no url") {
-      envoyerMessage(reponseAutomatique.message);
-    } else {
-      client.sendMessage(destinataire, {
-        image: {
-          url: reponseAutomatique.lien
-        },
-        caption: reponseAutomatique.message
-      }, {
-        caption: optionsMessage
-      });
-    }
-  } else {
-    if (conf.CHATBOT === "oui") {
-      if (!estGroupeBloque) {
-        const traduction = require("./framework/traduction");
-        
-        let messageEnAnglais = await traduction(messageRecu, {
-          to: 'en'
-        });
-
-        const url = 'http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=' + messageEnAnglais;
-
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            const reponseAnglais = data.cnt;
-            
-            traduction(reponseAnglais, {
-              to: 'fr'
-            })
-              .then(reponseFrancais => {
-                envoyerMessage(reponseFrancais);
-              })
-              .catch(erreur => {
-                console.error("Erreur lors de la traduction en français :", erreur);
-              });
-          })
-          .catch(erreur => {
-            console.error("Erreur lors de la requête à BrainShop :", erreur);
-          });
-      }
-    }
-  }
-}     
+     
 
         
             //---------------------------------------rang-count--------------------------------
