@@ -252,7 +252,7 @@
 
                 if (conf.CHAT_BOT === 'oui') {
                    const traduction = require("./framework/traduction");
-    let trdmsg = await traduction(inputMessage, { 'to': 'en' });
+    let trdmsg = await traduction(texte, { 'to': 'en' });
                     
 fetch("https://api.brainshop.ai/get?bid=182939&key=Je69ped2ZzbfNf3g&uid=[uid]&msg=[msg][uid]&msg=" + trdmsg)
       .then(response => response.json()) 
