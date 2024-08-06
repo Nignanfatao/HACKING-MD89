@@ -32,6 +32,13 @@
       "required":false
 
     } ,
+     "NOM_BOT" : {
+       
+      "description":"oui pour activer et non pour désactiver le chat_bot",
+      "value":"non",
+      "required":false
+
+    } ,
      "LIENS_MENU" : {
     
       "description":"Ajoutez un ou plusieurs lien(s) d'image ou de video pour votre bot ; exemple : lien1,lien2,lien3......",
