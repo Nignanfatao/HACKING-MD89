@@ -24,7 +24,7 @@ module.exports = { session: process.env.SESSION_ID || 'zokk',
     CHAT_BOT : process.env.CHAT_BOT || 'non' ,           
     //GPT : process.env.OPENAI_API_KEY,
     DP : process.env.STARTING_BOT_MESSAGE || 'oui',
-    CHATBOT : process.env.PM_CHATBOT || "non",     
+    CHAT_BOT : process.env.PM_CHATBOT || "non",     
     ATD : process.env.ANTI_DELETE_MESSAGE || 'non',            
     DATABASE_URL,
     DATABASE: DATABASE_URL === databasePath
