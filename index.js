@@ -249,11 +249,12 @@
                 };
 
 // Chat_bot 
+// Chat_bot 
 if (conf.CHAT_BOT === 'oui') {
   const traduction = require("./framework/traduction");
   
-  let trdmsg = await traduction(texte, { 'to': 'en' });
-  const apiUrl = `https://api.brainshop.ai/get?bid=182939&key=Je69ped2ZzbfNf3g&uid=[uid]&msg=${encodeURIComponent(trdmsg)}`;
+  const trdmsg = await traduction(texte, { 'to': 'en' });
+  const apiUrl = `https://api.brainshop.ai/get?bid=182939&key=Je69ped2ZzbfNf3g&uid=[uid]&msg=[${trdmsg}]`;
 
   axios.get(apiUrl)
     .then(response => {
