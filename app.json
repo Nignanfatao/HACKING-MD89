@@ -32,7 +32,7 @@
       "required":false
 
     } ,
-     "NOM_BOT" : {
+     "CHAT_BOT" : {
        
       "description":"oui pour activer et non pour désactiver le chat_bot",
       "value":"non",
